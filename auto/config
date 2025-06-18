@@ -18,7 +18,7 @@ public_master_mirror="http://deb.debian.org/debian"
 # Detect target architecture and filter args
 temp=""
 arch=$(dpkg --print-architecture)
-dist="bookworm"
+dist="trixie"
 lb_opts=""
 while [ ${#} -gt 0 ]; do
 	arg="${1}"
@@ -96,9 +96,9 @@ esac
 case "${dist}" in
 	lika-last-snapshot)
 	# We don't want lika-last-snapshot to end up in the image, it
-	# should be replaced with bookworm
-	lb_opts="${lb_opts} --distribution-binary bookworm"
-	lb_opts="${lb_opts} --debootstrap-script /usr/share/debootstrap/scripts/bookworm"
+	# should be replaced with trixie
+	lb_opts="${lb_opts} --distribution-binary trixie"
+	lb_opts="${lb_opts} --debootstrap-script /usr/share/debootstrap/scripts/trixie"
 	;;
 esac
 

@@ -17,10 +17,10 @@ configure_sources_list() {
 
     cat >/etc/apt/sources.list <<END
 # See https://www.lika.org/docs/general-use/lika-linux-sources-list-repositories/
-deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+deb http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
 
 # Additional line for source packages
-# deb-src http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+# deb-src http://deb.debian.org/debian trixie main contrib non-free non-free-firmware
 END
     apt-get update
 }

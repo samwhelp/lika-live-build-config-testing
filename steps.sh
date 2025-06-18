@@ -14,7 +14,7 @@ set -o pipefail # Bashism
 ## ## Default Values
 ##
 MASTER_NAME="lika"
-MASTER_DIST="bookworm"
+MASTER_DIST="trixie"
 MASTER_VERSION=""
 MASTER_VARIANT="default"
 IMAGE_TYPE="live"
