@@ -1,0 +1,47 @@
+
+
+##
+## # Main / Gnome Shell
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [Gnome](https://wiki.debian.org/Gnome)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Gnome Shell
+##
+
+
+
+
+##
+## ### GNOME Full
+##
+## > The full GNOME environment,
+## > including applications that are not officially part of the Upstream GNOME releases.
+## > It provides the recommended GNOME environment for Debian.
+##
+
+gnome
+
+
+
+
+##
+## ### GNOME Core
+##
+## > Only the official "core" modules of the GNOME desktop.
+## > Above packages depend on this one.
+##
+
+#gnome-core

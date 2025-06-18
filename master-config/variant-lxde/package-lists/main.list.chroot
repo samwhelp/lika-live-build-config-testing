@@ -1,0 +1,98 @@
+
+
+##
+## # Main / Lxde
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [LXDE](https://wiki.debian.org/LXDE)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Lxde
+##
+
+
+##
+## ### LXDE Core
+##
+## > The core LXDE desktop, best suited for minimal installations
+##
+
+#lxde-core
+
+
+
+
+##
+## ### LXDE
+##
+## > The full LXDE desktop.
+##
+
+lxde
+
+
+
+
+##
+## ### LXDE Task
+##
+## > A complete Debian LXDE desktop (starting from Debian 7.0 "Wheezy"):
+##
+
+#task-lxde-desktop
+
+
+
+
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+accountsservice
+
+light-locker
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings
+
+
+
+
+##
+## ## Package / Display Manager / sddm
+##
+
+#sddm
+#kde-config-sddm
+
+
+
+
+##
+## ## Package / Display Manager / sddm / theme
+##
+
+#sddm-theme-elarun
+#sddm-theme-maldives
+#sddm-theme-maya
+#sddm-theme-maui
+
+
+#sddm-theme-breeze
+#sddm-theme-debian-breeze
+#sddm-theme-debian-elarun

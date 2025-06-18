@@ -1,0 +1,94 @@
+
+
+##
+## # Main / Lxqt
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [LXQt](https://wiki.debian.org/LXQt)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Lxqt
+##
+
+
+##
+## ### LXQT Core
+##
+## > The lxqt-core metapackage provides only the core LXQt components.
+##
+
+#lxqt-core
+
+
+
+
+##
+## ### LXQT
+##
+## > The lxqt metapackage provides the LXQt components and some other recommended packages.
+##
+
+lxqt
+
+
+
+
+##
+## ### LXQT Task
+##
+## > The task-lxqt-desktop package installs the full Debian desktop with LXQt.
+##
+
+#task-lxqt-desktop
+
+
+
+
+##
+## ## Package / Display Manager / sddm
+##
+
+sddm
+#kde-config-sddm
+
+
+
+
+##
+## ## Package / Display Manager / sddm / theme
+##
+
+sddm-theme-elarun
+sddm-theme-maldives
+sddm-theme-maya
+#sddm-theme-maui
+
+
+#sddm-theme-breeze
+#sddm-theme-debian-breeze
+#sddm-theme-debian-elarun
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+#accountsservice
+
+#light-locker
+#lightdm
+#lightdm-gtk-greeter
+#lightdm-gtk-greeter-settings

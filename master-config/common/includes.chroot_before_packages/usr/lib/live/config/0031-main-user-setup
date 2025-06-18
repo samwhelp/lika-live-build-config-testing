@@ -1,0 +1,138 @@
+#!/bin/sh
+
+
+
+
+## TODO:
+exit 0
+
+
+
+
+configure_zsh() {
+	# Stop if zsh is not present
+	if [ ! -x /usr/bin/zsh ]; then
+	return
+	fi
+	# Stop if user has opted out of zsh
+	if echo "${LIVE_CONFIG_CMDLINE}" | grep -qs 'nozsh'; then
+	return
+	fi
+	chsh --shell /usr/bin/zsh lika
+	chsh --shell /usr/bin/zsh root
+}
+
+configure_usergroups() {
+	# Ensure those groups exist
+	addgroup --system kaboxer || true
+	addgroup --system wireshark || true
+
+	# adm - read access to log files
+	# dialout - for serial port access
+	# kaboxer - for kaboxer
+	# vboxsf - shared folders for virtualbox guest
+	# wireshark - capture sessions without being root
+	lika_groups="adm dialout kaboxer vboxsf wireshark"
+
+	for grp in $lika_groups; do
+	getent group $grp >/dev/null || continue
+	usermod -a -G $grp lika
+	done
+}
+
+pkg_installed() {
+	dpkg -s "$1" 2>/dev/null | grep -q "ok installed"
+}
+
+configure_terminal() {
+	while read -r desktop terminal; do
+	pkg_installed lika-desktop-$desktop || continue
+	update-alternatives --verbose --set x-terminal-emulator /usr/bin/$terminal || true
+	break
+	done <<END
+e17   terminology
+gnome gnome-terminal.wrapper
+i3	kitty
+kde   konsole
+lxde  lxterminal
+mate  mate-terminal.wrapper
+xfce  qterminal
+END
+}
+
+# Avoid configuring multiple times in case persistence is enabled
+if [ -e /var/lib/live/config/lika-user-setup ]; then
+	exit 0
+fi
+
+
+
+##
+## ## Change Live User Password
+##
+## * [/usr/lib/live/config](https://salsa.debian.org/live-team/live-config/-/blob/master/components/0030-user-setup?ref_type=heads#L70-L73)
+##
+## ``` sh
+## # Default password is: live
+## # passwords can be generated with 'echo "live" | mkpasswd -s',
+## # a blank password is 'U6aMy0wojraho'.
+## _PASSWORD="8Ab05sVQ4LLps"
+## ```
+##
+
+##
+## * man mkpasswd
+## * mkpasswd -h
+##
+
+##
+## run
+##
+## ``` sh
+## mkpasswd -m help
+## ```
+##
+## show
+##
+## ```
+## Available methods:
+## yescrypt        Yescrypt
+## gost-yescrypt   GOST Yescrypt
+## scrypt          scrypt
+## bcrypt          bcrypt
+## bcrypt-a        bcrypt (obsolete $2a$ version)
+## sha512crypt     SHA-512
+## sha256crypt     SHA-256
+## sunmd5          SunMD5
+## md5crypt        MD5
+## bsdicrypt       BSDI extended DES-based crypt(3)
+## descrypt        standard 56 bit DES-based crypt(3)
+## nt              NT-Hash
+## ```
+##
+
+##
+## ```
+## echo 'live' -n | mkpasswd -s -m descrypt
+## ```
+##
+## ```
+## echo '' -n | mkpasswd -s -m descrypt
+## ```
+##
+
+##
+## ## Set "kali" as password for the user lika
+##
+usermod -p 'AqLUsDitNnTsw' lika
+
+
+
+
+# Apply various configuration
+configure_zsh
+configure_usergroups
+configure_terminal
+
+# Remember that this script has been run
+touch /var/lib/live/config/lika-user-setup

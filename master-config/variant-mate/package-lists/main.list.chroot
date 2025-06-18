@@ -1,0 +1,69 @@
+
+
+##
+## # Main / Mate
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [MATE](https://wiki.debian.org/MATE)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Mate
+##
+
+
+
+
+##
+## ### MATE (full + extras)
+##
+## > This will install the complete MATE desktop including a few extras.
+##
+
+#mate-desktop-environment-extras
+
+
+
+
+##
+## ### MATE (full)
+##
+## > This will install the complete MATE desktop environment.
+##
+
+mate-desktop-environment
+
+
+##
+## ### MATE (core only)
+##
+## > This is a minimalist MATE installation
+## > (You have to install all end-user applications later).
+## > Above packages depend on this one.
+##
+
+# mate-desktop-environment-core
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+#accountsservice
+
+#light-locker
+#lightdm
+#lightdm-gtk-greeter
+#lightdm-gtk-greeter-settings

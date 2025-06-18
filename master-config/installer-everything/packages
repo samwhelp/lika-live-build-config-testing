@@ -1,0 +1,17 @@
+# Installer image with lika-linux-everything
+
+# Metapackages
+# You can customize the set of Lika metapackages (groups of tools) available
+# in the installer ISO.
+# For the complete list see: https://tools.lika.org/lika-metapackages
+#lika-linux-firmware
+#lika-linux-core
+#lika-tools-top10
+#lika-linux-default
+#lika-linux-large
+#lika-linux-everything
+
+# Graphical desktops
+#lika-desktop-xfce
+#lika-desktop-gnome
+#lika-desktop-kde

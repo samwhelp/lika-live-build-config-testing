@@ -1,0 +1,21 @@
+# Installer for Lika Purple
+
+# Metapackages
+# You can customize the set of Lika metapackages (groups of tools) available
+# in the installer ISO.
+# For the complete list see: https://tools.lika.org/lika-metapackages
+#lika-linux-firmware
+#lika-system-gui
+#lika-themes-purple  # temporary, until we do it a better way
+
+# Tools
+#lika-tools-detect
+#lika-tools-identify
+#lika-tools-protect
+#lika-tools-recover
+#lika-tools-respond
+
+# Graphical desktops
+#lika-desktop-xfce
+#lika-desktop-gnome
+#lika-desktop-kde

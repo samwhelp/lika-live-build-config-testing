@@ -1,0 +1,38 @@
+
+
+##
+## # Main / Enlightenment (e17)
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Package / [e17](https://packages.debian.org/source/bookworm/e17)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Enlightenment
+##
+
+enlightenment
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+accountsservice
+
+light-locker
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings

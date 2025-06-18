@@ -1,0 +1,39 @@
+
+
+##
+## # Main / Cinnamon
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [cinnamon](https://wiki.debian.org/cinnamon)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Cinnamon
+##
+
+cinnamon
+cinnamon-l10n
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+accountsservice
+
+light-locker
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings

@@ -1,0 +1,68 @@
+#!/bin/sh
+
+set -e
+
+TDIR=$1
+MIRROR=$2
+DISKNUM=$3
+CDDIR=$4
+ARCHES=$5
+
+# Copy grub theme assets
+# Until debian-cd picks them from d-i automatically:
+# http://bugs.debian.org/1003927
+cp -r $BASEDIR/../../master-config/common/bootloaders/grub-pc/theme \
+      $BASEDIR/../../master-config/common/bootloaders/grub-pc/splash.png \
+      $CDDIR/boot/grub/
+
+cd $CDDIR
+
+fix_branding() {
+    sed -i -e 's|Debian GNU/Linux|Lika Linux|g' \
+	-e 's|Lika GNU/Linux|Lika Linux|g' \
+	-e 's|Debian bookworm|Lika Rolling|g' \
+	-e 's|Debian|Lika|g' \
+	-e 's|DEBIAN|LIKA|g' \
+	"$@"
+}
+
+# Rebrand Debian into Lika
+if [ -e ../boot$DISKNUM/isolinux/menu.cfg ]; then
+    fix_branding ../boot$DISKNUM/isolinux/menu.cfg \
+		 ../boot$DISKNUM/isolinux/*.txt
+fi
+if [ -d boot/grub/theme ] && [ -s boot/grub/theme ]; then
+    fix_branding boot/grub/theme/*
+fi
+
+# Remove Debian's windows loader
+rm -f autorun.inf win32-loader.ini setup.exe
+
+# Replace Debian specific documentation
+rm -rf css
+cat >README.txt <<EOF
+This disc contains an installer for Lika Linux.
+
+Read more at: https://www.lika.org
+EOF
+cat >README.html <<EOF
+<html>
+<head><title>Lika Linux Installer Disc</title></head>
+<body>
+This disc contains an installer for Lika Linux.
+
+Read more at: <a href="https://www.lika.org">www.lika.org</a>
+</body>
+</html>
+EOF
+
+# Replace lika-last-snapshot with bookworm
+if [ -e dists/lika-last-snapshot ]; then
+    mv dists/lika-last-snapshot dists/bookworm
+    rm -f dists/stable && ln -sf bookworm dists/stable
+    sed -i -e 's|lika-last-snapshot|bookworm|g' \
+	dists/bookworm/Release
+fi
+
+# Redo the md5sum.txt due to our changes
+find . -type f | grep -v ./md5sum.txt | xargs md5sum | sort -uk2 > md5sum.txt

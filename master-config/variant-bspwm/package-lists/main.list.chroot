@@ -1,0 +1,67 @@
+
+
+##
+## # Main / Bspwm
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [bspwm](https://wiki.debian.org/bspwm)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Bspwm
+##
+
+bspwm
+sxhkd
+
+picom
+
+feh
+
+tint2
+
+rofi
+
+#plank
+
+
+
+
+##
+## > install `obsession` for `obsession-exit`, `obsession-logout` , `xdg-autostart`
+##
+
+#obsession
+
+
+
+
+##
+## > install `mate-media` for `/usr/bin/mate-volume-control-status-icon`
+##
+
+#mate-media
+
+
+
+
+##
+## ## Package / Display Manager / lightdm
+##
+
+accountsservice
+
+light-locker
+lightdm
+lightdm-gtk-greeter
+lightdm-gtk-greeter-settings

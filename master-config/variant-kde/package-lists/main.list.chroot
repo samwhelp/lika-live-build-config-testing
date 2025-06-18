@@ -1,0 +1,95 @@
+
+
+##
+## # Main / Kde Plasma
+##
+
+
+
+
+##
+## ## Link
+##
+## * Debian Wiki / [KDE](https://wiki.debian.org/KDE)
+## * Debian Wiki / [DesktopEnvironment](https://wiki.debian.org/DesktopEnvironment)
+##
+
+
+
+
+##
+## ## Package / Desktop Environment / Kde Plasma
+##
+
+
+
+
+##
+## ### KDE Full
+##
+## > The standard/upstream release. Full release of workspace, applications and framework
+##
+
+#kde-full
+
+
+
+
+##
+## ### KDE Standard
+##
+## > Debian's selection of common KDE packages for a smaller, more flexible KDE environment compared to kde-full
+##
+
+kde-standard
+
+
+
+
+##
+## ### KDE Plasma Desktop
+##
+## > Minimal desktop. kde-full and kde-standard packages depend on this package.
+##
+
+#kde-plasma-desktop
+
+
+
+
+##
+## ### KDE Plasma Task
+##
+## > Debian's selection of applications for a KDE desktop
+## > This is what is installed on a freshly installed KDE system.
+## > It includes a few non-KDE applications: firefox, gimp, orca
+##
+
+#task-kde-desktop
+
+
+
+
+##
+## ## Package / Display Manager / sddm
+##
+
+sddm
+kde-config-sddm
+
+
+
+
+##
+## ## Package / Display Manager / sddm / theme
+##
+
+sddm-theme-elarun
+sddm-theme-maldives
+sddm-theme-maya
+#sddm-theme-maui
+
+
+#sddm-theme-breeze
+#sddm-theme-debian-breeze
+#sddm-theme-debian-elarun
